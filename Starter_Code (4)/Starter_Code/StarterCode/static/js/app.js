@@ -1,6 +1,8 @@
 // get the naval endpoint
 const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+// set global variable
 let navalData
+
 // fetch the JSON data and console log it
 d3.json(url).then(function(data) {
   navalData = data
@@ -26,6 +28,8 @@ for(let key in namesArray) {
 }
 optionChanged(namesArray[0])
 });
+
+// Create function to fill in demographic data chart
 function demoData(id) {
   // Fill in demographic Chart
   let metaData = navalData.metadata;
@@ -42,33 +46,71 @@ demoInfo.append('p').text(`bbtype: ${metaInfo.bbtype}`)
 demoInfo.append('p').text(`wfreq: ${metaInfo.wfreq}`)
 }
 
+// Create function for bar chart
 function barChart(id) {
 
   // Get sample array for charting
   let sampleData = navalData.samples;
   const sampleInfo = sampleData.find(dict => dict.id == id);
-  console.log(sampleInfo)
-  // create default bar chart with first sample
   
-  // Slice the first 10 objects for plotting
-  //var x = sampleArray.slice(0,10).reverse();
-  // Reverse the array to accommodate Plotly's defaults
+  // Slice the first 10 objects for plotting and Reverse the array to accommodate Plotly's defaults
+  var x = sampleInfo.sample_values.slice(0,10).reverse();
+  var y = sampleInfo.otu_ids.map(object => `OTU ${object}`).slice(0,10).sort((a, b) => b - a).reverse();
+  var text = sampleInfo.otu_labels.map(object => `${object}`).slice(0,10).sort((a, b) => b - a).reverse();
 
-  //   data = [{
-  //     x: ,
-  //     y: ,
-  //     text: ,
-  //     type: 'bar',
-  //     orientation: 'h'
-  //   }]
+  // Bar graph data and layout
+  let data = [{
+    x: x,
+    y: y,
+    text: text,
+    type: 'bar',
+    orientation: 'h'
+  }];
   
-  //   Plotly.newPlot('plot', data); 
+  let layout = {
+    title: "Top ten Belly Button OTUs",
+    bargap: 0.05,
+  };
+  
+  Plotly.newPlot('bar', data, layout); 
+
+// Create function for bubble chart   
+}
+function bubbleChart(id) {
+
+  // Get sample array for charting
+  let sampleData = navalData.samples;
+  const sampleInfo = sampleData.find(dict => dict.id == id);
+
+  // Bubble graph data and layout
+  let data = [{
+    x: sampleInfo.otu_ids,
+    y: sampleInfo.sample_values,
+    text : sampleInfo.otu_labels.map(object => `${object}`),
+    mode: 'markers',
+    marker: {
+      color: sampleInfo.otu_ids,
+      size: sampleInfo.sample_values
+    }
+  }];
+  
+  let layout = {
+    title: "Subject Belly Button Biodiversity",
+    xaxis: {
+      title:{
+        text: 'OTU ID'
+      }
+    }
+  };
+  
+  Plotly.newPlot('bubble', data, layout); 
     
 }
 
 function optionChanged(id) {
 demoData(id)
 barChart(id)
+bubbleChart(id)
 }
 
 
