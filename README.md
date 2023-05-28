@@ -2,12 +2,12 @@
 I referenced this link for entering my data into my drop down box.
 https://softauthor.com/javascript-dynamic-html-select-drop-down/#:~:text=Add%20Options%20Dynamically%20To%20Select%20Element,-Next%2C%20iterate%20through&text=Inside%20the%20loop%2C%20create%20an,countriesData%20object%20on%20each%20iteration.
 
-##Background##
+## Background 
 * In this assignment, you will build an interactive dashboard to explore the Belly Button Biodiversity datasetLinks to an external site., which catalogs the microbes that colonize human navels.
 
 * The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
-#Before You Begin#
+# Before You Begin
 * Create a new repository for this project called belly-button-challenge. Do not add this Challenge to an existing repository.
 
 * Clone the new repository to your computer.
@@ -18,7 +18,7 @@ https://softauthor.com/javascript-dynamic-html-select-drop-down/#:~:text=Add%20O
 
 * Deploy the new repository to GitHub Pages.
 
-##Instructions##
+## Instructions
 #Complete the following steps:#
 
 * Use the D3 library to read in samples.json from the URL https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json.
@@ -59,7 +59,7 @@ Update all the plots when a new sample is selected. Additionally, you are welcom
 
 Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo. Ensure that your repository has regular commits and a thorough README.md file
 
-#Advanced Challenge Assignment (Optional with no extra points earning)#
+# Advanced Challenge Assignment (Optional with no extra points earning)
 The following task is advanced and therefore optional.
 
 Adapt the Gauge Chart from https://plot.ly/javascript/gauge-charts/Links to an external site. to plot the weekly washing frequency of the individual.
