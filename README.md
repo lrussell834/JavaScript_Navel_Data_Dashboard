@@ -2,7 +2,7 @@
 I referenced this link for entering my data into my drop down box.
 https://softauthor.com/javascript-dynamic-html-select-drop-down/#:~:text=Add%20Options%20Dynamically%20To%20Select%20Element,-Next%2C%20iterate%20through&text=Inside%20the%20loop%2C%20create%20an,countriesData%20object%20on%20each%20iteration.
 
-## Background 
+# Background 
 * In this assignment, you will build an interactive dashboard to explore the Belly Button Biodiversity datasetLinks to an external site., which catalogs the microbes that colonize human navels.
 
 * The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
@@ -19,7 +19,7 @@ https://softauthor.com/javascript-dynamic-html-select-drop-down/#:~:text=Add%20O
 * Deploy the new repository to GitHub Pages.
 
 ## Instructions
-#Complete the following steps:#
+# Complete the following steps:
 
 * Use the D3 library to read in samples.json from the URL https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json.
 
