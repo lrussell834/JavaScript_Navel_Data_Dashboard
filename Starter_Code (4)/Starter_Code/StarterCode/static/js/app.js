@@ -68,7 +68,7 @@ function barChart(id) {
   }];
   
   let layout = {
-    title: "Top ten Belly Button OTUs",
+    title: "Top Ten Belly Button OTUs",
     bargap: 0.05,
   };
   
